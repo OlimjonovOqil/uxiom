@@ -31,8 +31,8 @@ ul{
 root.render(
   <>
     <Global />
+    <App />
     <BrowserRouter>
-      <App />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

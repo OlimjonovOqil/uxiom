@@ -4,17 +4,11 @@ import logoText from "../../assets/Group2.svg";
 import logo from "../../assets/navbar-logo.svg";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [scrollDistance, setScrollDistance] = useState(0);
   const [logoScale, setLogoScale] = useState(1);
   const [logoTextOpacity, setLogoTextOpacity] = useState(1);
 
   const handleScroll = () => {
-    if (window.pageYOffset > 32) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
     if (window.screenY <= 60) {
       setScrollDistance(window.pageYOffset);
       setLogoTextOpacity(1 - window.pageYOffset * 0.016);
@@ -41,9 +35,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <s.NavbarWrapper scrolled={scrolled}>
+    <s.NavbarWrapper>
       <s.Navbar>
-        {/* <s.Logo onClick={scrollTop} /> */}
         <s.Logotip onClick={scrollTop}>
           <s.LogoText src={logoText} alt="logo" opacity={logoTextOpacity} />
           <s.Logo
@@ -54,11 +47,6 @@ const Navbar = () => {
           />
         </s.Logotip>
         <s.NavbarMenu>
-          {/* <s.NavbarMenuItem>
-            <s.NavbarMenuItemLink to="projects" smooth={true} duration={500}>
-              Projects link
-            </s.NavbarMenuItemLink>
-          </s.NavbarMenuItem> */}
           <s.NavbarMenuItem>
             <s.NavbarMenuItemLink to="projects" smooth={true} duration={500}>
               Projects

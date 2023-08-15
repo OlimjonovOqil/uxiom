@@ -3,11 +3,10 @@ import { colors } from "../../GlobalStyles/GlobalStyles";
 import { Link } from "react-scroll";
 
 export const NavbarWrapper = styled.div`
-  position: fixed;
-  top: ${({ scrolled }) => (scrolled ? "0" : "32px")};
+  position: sticky;
+  top: 0;
   left: 0;
   right: 0;
-  width: 100%;
   max-width: 1376px;
   height: 171px;
   margin: 0 auto;
@@ -19,7 +18,7 @@ export const NavbarWrapper = styled.div`
     ),
     rgba(249, 249, 249, 0);
   border-radius: 24px 24px 0 0;
-  transition: top 0.3s ease;
+  transition: all 1s ease;
   z-index: 100000;
 `;
 
@@ -36,11 +35,13 @@ export const Logotip = styled(Link)`
   height: 23px;
   position: relative;
   cursor: pointer;
+  transition: all 1s ease;
 `;
 
 export const LogoText = styled.img`
   width: 100%;
   opacity: ${({ opacity }) => opacity};
+  transition: all 0.3s ease;
 `;
 
 export const Logo = styled.img`
@@ -52,6 +53,7 @@ export const Logo = styled.img`
   height: 23px;
   transform: translate(${({ move }) => (move > 60 ? "-60px" : `-${move}px`)})
     scale(${({ scale }) => (scale > 1.9 ? "1.9" : scale)});
+  transition: all 0.5s ease;
 `;
 
 export const NavbarMenu = styled.ul`

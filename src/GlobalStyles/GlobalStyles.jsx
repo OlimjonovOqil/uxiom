@@ -15,6 +15,7 @@ export const AppWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  margin: 0 auto;
 `;
 
 export const AppWrapperInner = styled.div`
@@ -30,7 +31,6 @@ export const Container = styled.div`
   max-width: 1140px;
   padding: 0 20px;
   margin: 0 auto;
-  padding-top: 230px;
 `;
 
 export const Section = styled.section`

@@ -6,7 +6,7 @@ const YellowMove = keyframes`
     transform: translateX(0);
   }
   25%{
-    transform: translateX(-115px);
+    transform: translateX(-95px);
   }
   50%{
     transform: translate(20px,-42px);
@@ -24,7 +24,7 @@ const BlackMove = keyframes`
     transform: translate(-50px, 60px);
   }
   50%{
-    transform: translate(-60px, 65px);
+    transform: translate(-90px, 80px);
   }
   100%{
     transform: translate(0,0);
@@ -35,7 +35,7 @@ export const HeaderInner = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: calc(100vh - 262px);
+  height: calc(100vh - 171px);
 `;
 
 export const HeaderText = styled.div`
