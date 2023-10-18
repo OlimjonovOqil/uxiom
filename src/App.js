@@ -1,16 +1,13 @@
 import { styled } from "styled-components";
-import StartAnimation from "./components/StartAnimation/StartAnimation";
 import { useEffect, useState } from "react";
 import logo from "./assets/Group2.svg";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Projectsdetail from "./pages/ProjectsDetail/Projectsdetail";
+import HomePage from "./pages/Homepage/HomePage";
+import StartAnimation from "./components/StartAnimation/StartAnimation";
 
-const AnimationWrapper = styled.div`
-  width: 100vw;
-  min-height: 100vh;
-  padding: 44px 20px;
-  display: ${({ display }) => (display ? "flex" : "none")};
-  justify-content: center;
-  align-items: center;
-  opacity: ${({ start }) => (start ? "1" : "0")};
+const AppRouter = styled.div`
+  display: ${({ $display }) => ($display ? "none" : "block")};
 `;
 
 function App() {
@@ -35,16 +32,23 @@ function App() {
   }, []);
 
   return (
-    <AnimationWrapper display={display} start={start}>
-      <StartAnimation.StartLogo
-        logo={logo}
-        show={showLogoText}
+    <>
+      <StartAnimation
         display={display}
+        start={start}
+        logo={logo}
+        showLogoText={showLogoText}
+        showSmallCircle={showSmallCircle}
       />
-      <StartAnimation.BigCircle>
-        <StartAnimation.LittleCirle show={showSmallCircle} />
-      </StartAnimation.BigCircle>
-    </AnimationWrapper>
+      <AppRouter $display={display}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/project/:id" element={<Projectsdetail />} />
+          </Routes>
+        </BrowserRouter>
+      </AppRouter>
+    </>
   );
 }
 

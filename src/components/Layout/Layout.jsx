@@ -1,23 +1,13 @@
-import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import { Outlet } from "react-router-dom";
-import * as s from "../../GlobalStyles/GlobalStyles";
+import * as s from "../../GlobalStyles/Global.styled";
 
-const Layout = () => {
-  const [display, setDisplay] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setDisplay(false);
-    }, 3500);
-  }, []);
-
+const Layout = ({ children }) => {
   return (
-    <s.AppWrapper display={display}>
+    <s.AppWrapper >
       <s.AppWrapperInner>
         <Navbar />
-        <Outlet />
+        <s.ContentContainer>{children}</s.ContentContainer>
       </s.AppWrapperInner>
       <Footer />
     </s.AppWrapper>

@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import { styled } from "styled-components";
-import { colors } from "../../GlobalStyles/GlobalStyles";
+import { colors } from "../../GlobalStyles/Global.styled";
 
 export const FooterInner = styled.div`
   display: flex;
@@ -17,13 +16,14 @@ export const FooterMenu = styled.div`
   background-color: ${colors.black};
 `;
 
-export const FooterMenuLink = styled(Link)`
+export const FooterMenuLink = styled.div`
   color: #fff;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 export const FooterInfo = styled.div`

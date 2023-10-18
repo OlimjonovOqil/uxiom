@@ -1,5 +1,5 @@
-import * as s from "./HeaderStyles";
-import { Paragraph, SectionScroll } from "../../../GlobalStyles/GlobalStyles";
+import * as s from "./Heade.styled";
+import { Paragraph, SectionScroll } from "../../../GlobalStyles/Global.styled";
 import blackCircle from "../../../assets/black-circle.svg";
 import yellowCircle from "../../../assets/yellow-circle.svg";
 
@@ -11,7 +11,7 @@ const Header = () => {
           <s.HeaderTitle>
             Hi, we are Uxiom. A web design agency based in Budapest.
           </s.HeaderTitle>
-          <Paragraph size={"24px"} height={"35px"} width={"411px"}>
+          <Paragraph $size={"24px"} $height={"35px"} $width={"411px"}>
             We design and develop websites, web applications, and mobile apps
             that move business forward.
           </Paragraph>

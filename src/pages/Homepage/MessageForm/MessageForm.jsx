@@ -1,11 +1,11 @@
 import React from "react";
-import * as s from "./MessageFormsStyles";
-import { Section, SectionTitle } from "../../../GlobalStyles/GlobalStyles";
+import * as s from "./MessageForm.styled";
+import { Section, SectionTitle } from "../../../GlobalStyles/Global.styled";
 
 const MessageForm = () => {
   return (
-    <Section mb="141px">
-      <SectionTitle mb="76px">Get in touch</SectionTitle>
+    <Section $mb="141px">
+      <SectionTitle $mb="76px">Get in touch</SectionTitle>
       <s.MessageSectionFrom>
         <s.InputForm>
           <s.FormInput placeholder="First Name*" required type="name" />

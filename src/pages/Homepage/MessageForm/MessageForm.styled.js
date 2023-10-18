@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { colors } from "../../../GlobalStyles/GlobalStyles";
+import { colors } from "../../../GlobalStyles/Global.styled";
 
 export const MessageSectionFrom = styled.form`
   width: 736px;
@@ -26,6 +26,7 @@ export const FormTextarea = styled.textarea`
   min-height: 108px;
   border-radius: 14px;
   margin-bottom: 21px;
+  resize: none;
 `;
 
 export const FormButton = styled.button`

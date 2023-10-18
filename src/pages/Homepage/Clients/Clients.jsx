@@ -1,42 +1,24 @@
 import React from "react";
-import * as s from "./ClientsStyles";
+import * as s from "./Clients.styled";
 import {
   Section,
   SectionItem,
   SectionScroll,
   SectionTitle,
-} from "../../../GlobalStyles/GlobalStyles";
+} from "../../../GlobalStyles/Global.styled";
+import { clientsData } from "../../../Data/Clients";
 
 const Clients = () => {
   return (
     <>
-      <Section mt="200px">
+      <Section $mt="200px">
         <SectionTitle>Our clients</SectionTitle>
         <s.ClientsInner>
-          <SectionItem bg={false} color={false} border={true}>
-            Company Name
-          </SectionItem>
-          <SectionItem bg={false} color={false} border={true}>
-            Company Name
-          </SectionItem>
-          <SectionItem bg={false} color={false} border={true}>
-            Company Name
-          </SectionItem>
-          <SectionItem bg={false} color={false} border={true}>
-            Company Name
-          </SectionItem>
-          <SectionItem bg={false} color={false} border={true}>
-            Company Name
-          </SectionItem>
-          <SectionItem bg={false} color={false} border={true}>
-            Company Name
-          </SectionItem>
-          <SectionItem bg={false} color={false} border={true}>
-            Company Name
-          </SectionItem>
-          <SectionItem bg={false} color={false} border={true}>
-            Company Name
-          </SectionItem>
+          {clientsData.map((item) => (
+            <SectionItem key={item.id} $select={false}>
+              {item.name}
+            </SectionItem>
+          ))}
         </s.ClientsInner>
       </Section>
       <SectionScroll id="message" />

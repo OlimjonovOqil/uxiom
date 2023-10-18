@@ -9,13 +9,14 @@ export const colors = {
 export const AppWrapper = styled.div`
   max-width: 1440px;
   background-color: ${colors.black};
-  /* background-color: ${colors.bg}; */
   padding: 32px;
-  display: ${({ display }) => (display ? "none" : "flex")};
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 `;
 
 export const AppWrapperInner = styled.div`
@@ -31,11 +32,18 @@ export const Container = styled.div`
   max-width: 1140px;
   padding: 0 20px;
   margin: 0 auto;
+  border-radius: 24px 24px 0 0;
+`;
+
+export const ContentContainer = styled.div`
+  padding-top: 106px;
+  border-radius: 24px 24px 0 0;
 `;
 
 export const Section = styled.section`
-  margin-top: ${({ mt }) => mt || "150px"};
-  margin-bottom: ${({ mb }) => mb || "0"};
+  margin-top: ${({ $mt }) => $mt || "150px"};
+  margin-bottom: ${({ $mb }) => $mb || "0"};
+  border-radius: 24px 24px 0 0;
 `;
 
 export const SectionTitle = styled.p`
@@ -44,24 +52,24 @@ export const SectionTitle = styled.p`
   height: 70px;
   text-align: center;
   color: ${colors.black};
-  margin-bottom: ${({ mb }) => mb || "72px"};
+  margin-bottom: ${({ $mb }) => $mb || "72px"};
 `;
 
 export const Paragraph = styled.p`
-  font-size: ${({ size }) => size || "16px"};
-  line-height: ${({ height }) => height || "21.76px"};
-  width: ${({ width }) => width || "100%"};
-  color: ${({ color }) => color || colors.black};
+  font-size: ${({ $size }) => $size || "16px"};
+  line-height: ${({ $height }) => $height || "21.76px"};
+  width: ${({ $width }) => $width || "100%"};
+  color: ${({ $color }) => $color || colors.black};
 `;
 
 export const SectionItem = styled.div`
   width: 248px;
   cursor: pointer;
   padding: 17px 40px;
-  border: ${({ border }) => (border ? "1px solid #000" : 0)};
+  border: ${({ $select }) => ($select ? 0 : "1px solid #000")};
   border-radius: 24px;
-  color: ${({ color }) => color || "#444"};
-  background-color: ${({ bg }) => (bg ? "#ffe66b" : "")};
+  color: ${({ $select }) => $select || "#444"};
+  background-color: ${({ $select }) => ($select ? "#ffe66b" : "")};
 
   &:hover {
     transform: scale(1.01);

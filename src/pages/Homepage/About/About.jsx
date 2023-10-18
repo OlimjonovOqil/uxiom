@@ -1,17 +1,17 @@
 import React from "react";
-import * as s from "./AboutStyles";
+import * as s from "./About.styled";
 import {
   Paragraph,
   Section,
   SectionTitle,
-} from "../../../GlobalStyles/GlobalStyles";
+} from "../../../GlobalStyles/Global.styled";
 
 const About = () => {
   return (
-    <Section mt="160px">
+    <Section $mt="160px">
       <SectionTitle>Who we are</SectionTitle>
       <s.AboutInner>
-        <Paragraph width="500px">
+        <Paragraph $width="500px">
           Lorem ipsum dolor sit amet consectetur. Dignissim ante turpis rhoncus
           mattis risus quam at. At vulputate egestas scelerisque commodo amet at
           ut commodo purus. Sit turpis ut id ac eget in venenatis. Sagittis
@@ -20,7 +20,7 @@ const About = () => {
           lobortis eget volutpat sed quisque convallis posuere. Nunc morbi amet
           magna faucibus ac libero venenatis diam.
         </Paragraph>
-        <Paragraph width="500px">
+        <Paragraph $width="500px">
           Lorem ipsum dolor sit amet consectetur. Dignissim ante turpis rhoncus
           mattis risus quam at. At vulputate egestas scelerisque commodo amet at
           ut commodo purus. Sit turpis ut id ac eget in venenatis. Sagittis
